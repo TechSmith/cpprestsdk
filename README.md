@@ -1,5 +1,22 @@
 **cpprestsdk is in maintenance mode and we do not recommend its use in new projects. We will continue to fix critical bugs and address security issues.**
 
+## TechSmith Changes
+TechSmith's changes to this forked reposoitory are mainly to provide a prebuilt static library for cpprest to be integrated into other applications as well as provide a simple script to generate that static library.
+
+You will probably need to install cmake before running the build script. An easy way to do that is with homebrew.
+
+```
+brew install cmake
+```
+
+The [build.command](build.command) file is included and should be ready to run to produce the static library from scratch if an update is needed.
+
+The build script expects boost and openssl directories to be one directory inside of the repo that includes cpprest as a submodule. i.e. ../boost*/ and ../openssl*/
+
+The resulting static library is output to 'build.release\Binaries\libcpprest.a'
+
+For the purposes of distributing new versions of this static library, that file should replace the [lib/libcpprest.a](lib/libcpprest.a) file in this repository, and that change should be pushed up to GitHub.
+
 ## Welcome!
 
 The C++ REST SDK is a Microsoft project for cloud-based client-server communication in native code using a modern asynchronous C++ API design. This project aims to help C++ developers connect to and interact with services.  
