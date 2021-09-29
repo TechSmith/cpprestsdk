@@ -42,6 +42,7 @@ cmake   ../Release \
         -DCPPREST_EXCLUDE_BROTLI=TRUE \
         -DBUILD_TESTS=FALSE \
         -DBUILD_SAMPLES=FALSE \
-        -DCMAKE_CXX_FLAGS="${CMAKE_CXX_FLAGS} -Wno-c11-extensions" \
-        -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64"
+        -DCMAKE_CXX_FLAGS="${CMAKE_CXX_FLAGS} -Wno-c11-extensions -fvisibility=default -fvisibility-inlines-hidden" \
+        -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64" \
+        -DCMAKE_OSX_DEPLOYMENT_TARGET="10.13"
 make
